@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { animated, config, useSpring } from "@react-spring/three";
-import { Float, useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
@@ -21,6 +21,7 @@ export const Sneaker = () => {
   useFrame(() => {
     if (!isDragging) {
       api.start({
+        // @ts-ignore
         rotation: [0, ref.current?.rotation.y + 0.01, 0],
       });
     }
